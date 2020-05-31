@@ -51,15 +51,21 @@ a {
   display: block;
   text-decoration: none;
 }
+button:focus,
+a:focus {
+  outline: none;
+}
 .header {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  padding-top: 20px;
 }
 .header-button {
   display: flex;
+  justify-content: center;
 }
 .button {
   display: block;
@@ -106,10 +112,13 @@ a {
 .hero {
   max-width: 100%;
   height: auto;
+  padding-top: 224px;
+  padding-bottom: 138px;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1a1915;
   background-size: cover;
+  background-image: url(../img/mobile.png);
   color: var(--color-text-banner);
   text-align: center;
 }
@@ -119,11 +128,12 @@ a {
   align-items: center;
 }
 .main-title {
-  margin: 0;
+  margin: 0 -2px 14px;
   font-size: 30px;
   text-transform: uppercase;
 }
 .subtitle {
+  margin-bottom: 16px;
   font-family: var(--font-text);
   font-size: 18px;
   font-weight: 300;
@@ -140,6 +150,7 @@ a {
 }
 .partners {
   padding-top: 68px;
+  padding-bottom: 56px;
   text-align: center;
 }
 .partners-title {
@@ -147,15 +158,11 @@ a {
   color: var(--color-title);
 }
 .partner-list {
+  margin-bottom: 10px;
   list-style: none;
 }
 .partner-list-item {
   padding: 14px 0;
-  border-radius: 20px;
-  transition: box-shadow 200ms linear;
-}
-.partner-list-item:hover {
-  box-shadow: 0 0 3px 2px rgba(255, 78, 80, 0.5) inset;
 }
 .partner-list-item:hover .name {
   transform: scale(1.2);
@@ -214,8 +221,8 @@ a {
   color: var(--color-description);
 }
 .button-partner {
+  max-width: 280px;
   padding: 12px 62px;
-  /* margin: 0 auto; */
   border-radius: 20px;
   color: var(--color-accent);
   border: 2px solid var(--color-accent);
@@ -228,37 +235,17 @@ a {
 }
 
 @media (max-width: 767px) {
-  .header {
-    padding-top: 20px;
-  }
   .header-button {
-    justify-content: center;
     margin-bottom: 116px;
-  }
-  .hero {
-    background-image: url(../img/mobile.png);
-    padding-top: 224px;
-    padding-bottom: 138px;
   }
   .main-title {
     max-width: 300px;
-    margin: 0 -2px 14px;
   }
   .subtitle {
     max-width: 250px;
-    margin-bottom: 16px;
-  }
-  .partners {
-    padding-bottom: 56px;
   }
   .partners-title {
     max-width: 300px;
-  }
-  .partner-list {
-    margin-bottom: 10px;
-  }
-  .button-partner {
-    max-width: 280px;
   }
 }
 @media (min-width: 768px) {
@@ -275,7 +262,7 @@ a {
   }
   .main-title {
     font-size: 52px;
-    margin-bottom: 28px;
+    margin: 0 0 28px;
   }
   .subtitle {
     font-size: 24px;
